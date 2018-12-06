@@ -25,4 +25,23 @@
                 $data = $this->Topic->findById($id);
                 $this->set('topic', $data);
             }
+
+            //edit topic
+            public function edit($id) {
+                $data = $this->Topic->findById($id);
+
+                if ($this->request->is(array('post', 'put'))) {
+                    $this->Topic->id = $id;
+                    if($this->Topic->save($this->reques->data)) {
+                        $this->Session->setFlash('The topic has been edited');
+                        $this->redirect('index');
+                    }
+                }
+                $this->request->data=$data;
+            }
+
+            //delete topic
+	public function delete($id) {
+
+	}
         }

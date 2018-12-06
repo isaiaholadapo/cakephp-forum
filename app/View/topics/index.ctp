@@ -6,6 +6,8 @@
     <th>Publised</th>
     <th>Created</th>
     <th>Modified</th>
+    <th>Edit</th>
+    <th>Delete</th>
    </tr>
 
    <?php foreach($topics as $topic) : ?>
@@ -15,6 +17,8 @@
         <td><?php echo $topic['Topic']['visible']; ?></td>
         <td><?php echo $topic['Topic']['created']; ?></td>
         <td><?php echo $topic['Topic']['modified']; ?></td>
+        <td><?php echo $this->HTML->link('Edit', array('controller' => 'topics', 'action' => 'edit',  $topic['Topic']['id'])); ?></td>
+        <td><?php echo $this->HTML->link('Delete', array('controller' => 'topics', 'action' => 'delete',  $topic['Topic']['id'])); ?></td>
    </tr>
 
    <?php endforeach; ?>
