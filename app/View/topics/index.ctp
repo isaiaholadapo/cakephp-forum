@@ -10,7 +10,7 @@
 
    <?php foreach($topics as $topic) : ?>
    <tr>
-        <td><?php echo $topic['Topic']['title']; ?></td>
+        <td><?php echo $this->HTML->link($topic['Topic']['title'], array('controller' => 'topics', 'action' => 'view',  $topic['Topic']['id'])); ?></td>
         <td><?php echo $topic['Topic']['user_id']; ?></td>
         <td><?php echo $topic['Topic']['visible']; ?></td>
         <td><?php echo $topic['Topic']['created']; ?></td>

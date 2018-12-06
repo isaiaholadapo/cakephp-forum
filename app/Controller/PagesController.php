@@ -77,4 +77,8 @@ class PagesController extends AppController {
 			throw new NotFoundException();
 		}
 	}
+ 
+	public function energy_drink() {
+	//	$this->layout = 'ajax';
+	}
 }
